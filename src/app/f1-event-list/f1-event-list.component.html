@@ -1,0 +1,6 @@
+<div class="eventList">
+    <mat-accordion class="example-headers-align">
+        <app-f1-event-panel *ngFor="let f1Event of filteredEventList" [f1Event]="f1Event"
+            [isNextEvent]="isNextEvent(f1Event)" [timezone]="timezone"></app-f1-event-panel>
+    </mat-accordion>
+</div>

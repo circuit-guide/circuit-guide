@@ -1,0 +1,31 @@
+@import "~../../styles.scss";
+
+.raceFlag,
+.raceTitle,
+.raceDate {
+  margin: 0 auto;
+}
+.raceTitle {
+  width: 60%;
+}
+
+.raceDate {
+  width: 40%;
+}
+
+.flag-icon {
+  margin-right: 10px;
+}
+
+mat-expansion-panel {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+mat-expansion-panel.mat-expanded {
+  margin: 10px auto;
+}
+
+mat-expansion-panel.active {
+  background-color: $accent;
+}

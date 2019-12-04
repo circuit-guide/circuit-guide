@@ -1,0 +1,14 @@
+<form class="timezone-form">
+    <mat-form-field class="time-zone">
+        <input matInput placeholder="Select Timezone" aria-label="Timezone" [matAutocomplete]="auto"
+            [formControl]="timezoneCtrl">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timezoneCtrl.setValue('')">
+            <mat-icon>close</mat-icon>
+        </button>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)='updateSelectedTimezone($event.option.value)'>
+            <mat-option *ngFor="let timezone of filteredTimezones | async" [value]="timezone">
+                <span>{{timezone}}</span>
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>

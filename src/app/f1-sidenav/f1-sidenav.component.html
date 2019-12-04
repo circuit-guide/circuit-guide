@@ -1,0 +1,38 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #leftMenuSideNav position="start" [(opened)]="menuSideNavOpened">
+        <div class="filterTop">
+            <h2>Menu</h2>
+            <button mat-icon-button aria-label="Close sidenav filters" (click)="leftMenuSideNav.toggle()"
+                color="accent">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <app-f1-menu></app-f1-menu>
+    </mat-sidenav>
+    <mat-sidenav #sidenavFilters mode="over" [(opened)]="filtersSideNavOpened" position="end">
+        <div class="filterTop">
+            <h2>Filters</h2>
+            <button mat-icon-button aria-label="Close sidenav filters" (click)="sidenavFilters.toggle()" color="accent">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <div class="filterContainer">
+            <p>Hide past sessions</p>
+            <mat-slide-toggle [checked]="showFutureOnly" (change)="toggleShowFutureOnly()" color=primary>
+            </mat-slide-toggle>
+
+            <p>Timezone</p>
+            <app-f1-timezone-filter (timezoneChange)="updateTimezone($event)"></app-f1-timezone-filter>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-f1-header (leftMenuOpened)="leftMenuSideNav.toggle()"></app-f1-header>
+        <app-f1-event-list [isFutureOnlyChecked]="showFutureOnly" [timezone]="selectedTimezone"></app-f1-event-list>
+        <div class="filterNavButtonContainer">
+            <button mat-fab aria-label="Filter list" color="primary" class="filterNavButton"
+                (click)="sidenavFilters.toggle()">
+                <mat-icon>filter_list</mat-icon>
+            </button>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

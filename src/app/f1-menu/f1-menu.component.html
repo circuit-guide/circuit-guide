@@ -1,0 +1,8 @@
+<mat-nav-list>
+    <mat-list-item *ngFor="let navItem of navigationItems">
+        <a matLine href="{{navItem.url}}">{{navItem.title}}</a>
+        <button mat-icon-button>
+            <mat-icon>{{navItem.icon}}</mat-icon>
+        </button>
+    </mat-list-item>
+</mat-nav-list>

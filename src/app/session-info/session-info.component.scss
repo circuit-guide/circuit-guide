@@ -1,0 +1,18 @@
+.sessionInfo {
+  width: 100%;
+  display: block;
+}
+.sessionTitle,
+.sessionDate,
+.sessionTime {
+  display: inline-block;
+}
+.sessionTitle {
+  width: 30%;
+}
+.sessionDate {
+  width: 35%;
+}
+.sessionTime {
+  width: 35%;
+}

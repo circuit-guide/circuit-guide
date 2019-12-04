@@ -1,0 +1,14 @@
+<mat-expansion-panel [expanded]="isNextEvent" [class.active]="isNextEvent">
+    <mat-expansion-panel-header>
+        <mat-panel-title class="raceTitle">
+            <span class="flag-icon flag-icon-squared flag-icon-{{f1Event.flagIcon}}"></span>
+            {{f1Event.country}}, {{f1Event.city}}
+        </mat-panel-title>
+        <div class="raceDate">
+            {{ eventDatesString }}
+        </div>
+    </mat-expansion-panel-header>
+    <p>Time: {{ timezone }}<br>* ALL TIMES ARE INCORRECT FOR 2020 :)</p>
+    <app-session-info *ngFor="let session of f1Event.sessions" [session]='session' [timezone]="timezone">
+    </app-session-info>
+</mat-expansion-panel>

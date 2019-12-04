@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+.menu-icon {
+  padding: 0 14px;
+}
+
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.f1-header {
+  @include mat-elevation(4);
+}
